@@ -46,7 +46,7 @@ public class Book implements Comparable<Book>
 	{
 		if(bookTitle == null || bookTitle.equals(""))
 		{
-			throw new InvalidArgumentException();
+			throw new InvalidArgumentException(bookTitle);
 		}
 		this.bookTitle = bookTitle;
 	}
@@ -60,7 +60,7 @@ public class Book implements Comparable<Book>
 	{
 		if(yearPublished < 0 || yearPublished > MAX_YEAR_PUBLISHED)
 		{
-			throw new InvalidBookDateException();
+			throw new InvalidBookDateException(yearPublished);
 		}
 		
 	}

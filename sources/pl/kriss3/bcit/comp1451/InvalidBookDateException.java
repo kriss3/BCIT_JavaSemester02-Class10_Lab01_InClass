@@ -1,11 +1,10 @@
 package pl.kriss3.bcit.comp1451;
 
+@SuppressWarnings("serial")
 public class InvalidBookDateException extends Exception 
 {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
+	public InvalidBookDateException(int param)
+	{
+		super(Integer.toString(param));
+	}
 }
