@@ -21,7 +21,8 @@ public final class Biography extends Book
 	}
 
 	@Override
-	public int hashCode() {
+	public int hashCode() 
+	{
 		final int prime = 31;
 		int result = super.hashCode();
 		result = prime * result + ((subject == null) ? 0 : subject.hashCode());
@@ -29,18 +30,24 @@ public final class Biography extends Book
 	}
 
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(Object obj) 
+	{
 		if (this == obj)
 			return true;
+		
 		if (!super.equals(obj))
 			return false;
+		
 		if (!(obj instanceof Biography))
 			return false;
+		
 		Biography other = (Biography) obj;
-		if (subject == null) {
+		if (subject == null) 
+		{
 			if (other.subject != null)
 				return false;
-		} else if (!subject.equals(other.subject))
+		} 
+		else if (!subject.equals(other.subject))
 			return false;
 		
 		if(this.subject.equals(other.subject))

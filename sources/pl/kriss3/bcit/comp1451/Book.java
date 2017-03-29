@@ -8,6 +8,7 @@ public class Book implements Comparable<Book>
 	private String lastName;
 	protected String bookTitle;
 	private int yearPublished;
+	
 	public Book(String firstName, String lastName, String bookTitle, int yearPublished)  
 			throws InvalidBookDateException, InvalidArgumentException
 	{
@@ -22,7 +23,7 @@ public class Book implements Comparable<Book>
 		return this.firstName;
 	}
 	
-	public final void setFirstName(String value) throws InvalidArgumentException
+	public final void setFirstName(String value) 
 	{
 		this.firstName = value;
 	}
@@ -32,7 +33,7 @@ public class Book implements Comparable<Book>
 		return this.lastName;
 	}
 	
-	public final void setLastName(String value) throws InvalidArgumentException
+	public final void setLastName(String value) 
 	{
 		this.lastName = value;
 	}
@@ -46,9 +47,12 @@ public class Book implements Comparable<Book>
 	{
 		if(bookTitle == null || bookTitle.equals(""))
 		{
-			throw new InvalidArgumentException(bookTitle);
+			throw new InvalidArgumentException(String.format("Parameter for this method: %s is invalid !", bookTitle));
 		}
-		this.bookTitle = bookTitle;
+		else
+		{
+			this.bookTitle = bookTitle;
+		}
 	}
 	
 	public final int getYearPublished() 
@@ -56,13 +60,16 @@ public class Book implements Comparable<Book>
 		return yearPublished;
 	}
 	
-	public final void setYearPublished(int yearPublished) throws InvalidBookDateException
+	public final void setYearPublished(int value) throws InvalidBookDateException
 	{
-		if(yearPublished < 0 || yearPublished > MAX_YEAR_PUBLISHED)
+		if(value < 0 || value > MAX_YEAR_PUBLISHED)
 		{
-			throw new InvalidBookDateException(yearPublished);
+			throw new InvalidBookDateException(String.format("The year published: %s is invalid!", value));
 		}
-		
+		else
+		{
+			this.yearPublished = value;
+		}
 	}
 
 	@Override
@@ -77,28 +84,40 @@ public class Book implements Comparable<Book>
 	}
 
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(Object obj) 
+	{
 		if (this == obj)
 			return true;
+		
 		if (obj == null)
 			return false;
+		
 		if (!(obj instanceof Book))
 			return false;
+		
+		
 		Book other = (Book) obj;
-		if (bookTitle == null) {
+		if (bookTitle == null) 
+		{
 			if (other.bookTitle != null)
 				return false;
-		} else if (!bookTitle.equals(other.bookTitle))
+		} 
+		else if (!bookTitle.equals(other.bookTitle))
 			return false;
-		if (firstName == null) {
+		if (firstName == null) 
+		{
 			if (other.firstName != null)
 				return false;
-		} else if (!firstName.equals(other.firstName))
+		} 
+		else if (!firstName.equals(other.firstName))
 			return false;
-		if (lastName == null) {
+		
+		if (lastName == null) 
+		{
 			if (other.lastName != null)
 				return false;
-		} else if (!lastName.equals(other.lastName))
+		} 
+		else if (!lastName.equals(other.lastName))
 			return false;
 		if (yearPublished != other.yearPublished)
 			return false;
@@ -114,6 +133,9 @@ public class Book implements Comparable<Book>
 	@Override
 	public String toString()
 	{
-		return String.format("Author FName: %s\nAuthor LName: %s\nBook Title: %s\nPublished on: %d", firstName, lastName, bookTitle, yearPublished);
+		return String.format("----------------------------\n"
+				+ "Author FName: %s\nAuthor LName: %s\nBook Title: %s\nPublished on: %d\n"
+				+ "---------------------------\n"
+				, firstName, lastName, bookTitle, yearPublished);
 	}
 }

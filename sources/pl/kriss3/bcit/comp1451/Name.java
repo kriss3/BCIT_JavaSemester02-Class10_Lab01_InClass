@@ -5,29 +5,44 @@ public class Name
 	private String firstName;
 	private String lastName;
 	
-	public Name(String firstName, String lastName) 
+	public Name(String firstName, String lastName) throws InvalidArgumentException 
 	{
-		this.firstName = firstName;
-		this.lastName = lastName;
+		setFirstName(firstName);
+		setLastName(lastName);
 	}
 
 	public String getFirstName() 
-	{
+	{	
 		return firstName;
 	}
 
-	public void setFirstName(String firstName) 
+	public void setFirstName(String value) throws InvalidArgumentException 
 	{
-		this.firstName = firstName;
+		if(value == null || value.equals(""))
+		{
+			throw new InvalidArgumentException(String.format("Value of Fist Name param: % is incorrect!", value));
+		}
+		else
+		{
+			this.firstName = value;
+		}	
 	}
 
-	public String getLastName() {
+	public String getLastName() 
+	{
 		return lastName;
 	}
 
-	public void setLastName(String lastName) 
+	public void setLastName(String value) throws InvalidArgumentException 
 	{
-		this.lastName = lastName;
+		if(value == null || value.equals(""))
+		{
+			throw new InvalidArgumentException(String.format("Value of Last Name param: % is incorrect!", value));
+		}
+		else
+		{
+			this.lastName = value;
+		}
 	}
 	
 	@Override
