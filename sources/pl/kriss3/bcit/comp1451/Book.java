@@ -47,7 +47,7 @@ public class Book implements Comparable<Book>
 	{
 		if(bookTitle == null || bookTitle.equals(""))
 		{
-			throw new InvalidArgumentException(String.format("Parameter for this method: %s is invalid !", bookTitle));
+			throw new InvalidArgumentException(String.format("Parameter for this method is: < %s > and it is invalid !", bookTitle));
 		}
 		else
 		{
@@ -64,7 +64,7 @@ public class Book implements Comparable<Book>
 	{
 		if(value < 0 || value > MAX_YEAR_PUBLISHED)
 		{
-			throw new InvalidBookDateException(String.format("The year published: %s is invalid!", value));
+			throw new InvalidBookDateException(String.format("The year published: < %s > and it is invalid!", value));
 		}
 		else
 		{

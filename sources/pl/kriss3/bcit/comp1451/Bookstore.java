@@ -30,11 +30,12 @@ public class Bookstore
 	private void addBook() throws InvalidBookDateException, InvalidArgumentException
 	{
 		listOfBooks.add(new Book("Sidney", "Sheldon", "The Master of the Game", 1997));
-		listOfBooks.add(new Book("Philip", "K.Dick", "The Man in the High Castle", 1962));
-		listOfBooks.add(new Book("Frank", "McCourt", "Angela's Ashes", 1996));
-		listOfBooks.add(new Book("Erich", "Gamma", "Design Patterns", 1994));
-		listOfBooks.add(new Book("Stanislaw", "Ulam", "Adventures of a Mathematician", 1983));
-		listOfBooks.add(new Book("",null,"",2019));
+		listOfBooks.add(new Book("Philip", "K.Dick", "The Man in the High Castle", 2000));
+		listOfBooks.add(new Book("Frank", "McCourt", "Angela's Ashes", 2005));
+		listOfBooks.add(new Book("Erich", "Gamma", "Design Patterns", 2007));
+		listOfBooks.add(new Book("Stanislaw", "Ulam", "Adventures of a Mathematician", 2009));
+		listOfBooks.add(new Book("Peter","Steel","Dark Matter", 2015));
+		listOfBooks.add(new Book(null,null,null,2019));
 		
 	}
 	
