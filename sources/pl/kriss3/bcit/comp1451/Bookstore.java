@@ -4,11 +4,19 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Bookstore class
+ * @author Krzysztof Szczurowski
+ * @see https://github.com/kriss3/BCIT_JavaSemester02-Class10_Lab01_InClass.git
+ * @since 2017-03-24
+ * @throws InvalidBookDateException when date outside max bound;
+ * @throws InvalidArgumentException when argument null or empty;
+ */
 public class Bookstore 
 {
 	private List<Book> listOfBooks;
 	
-	public Bookstore() throws InvalidBookDateException, InvalidArgumentException
+	public Bookstore() //throws InvalidBookDateException, InvalidArgumentException
 	{
 		listOfBooks = new ArrayList<Book>();
 		try 
@@ -22,7 +30,7 @@ public class Bookstore
 		}
 		finally
 		{
-			//add default book 
+			//add default book ??
 			System.out.println("<Finally Block> Something went wrong. Check error log!");
 		}
 	}

@@ -1,5 +1,13 @@
 package pl.kriss3.bcit.comp1451;
 
+/**
+ * Book class 
+ * @author kszczurowski
+ * @see https://github.com/kriss3/BCIT_JavaSemester02-Class10_Lab01_InClass.git
+ * @since 2017-03-24
+ * @throws InvalidBookDateException when year is outside max boundry;
+ * @throws InvalidArgumentException when argument null or empty;
+ */
 public class Book implements Comparable<Book>
 {
 	//private Name authorName;

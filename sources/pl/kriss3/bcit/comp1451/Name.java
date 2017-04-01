@@ -1,10 +1,13 @@
 package pl.kriss3.bcit.comp1451;
 
+import java.io.IOException;
+
 /**
  * Name class to deal with Name objects;
  * @author Krzysztof Szczurowski
  * @see https://github.com/kriss3/BCIT_JavaSemester02-Class10_Lab01_InClass.git
  * @since 2017-03-24
+ * @throws InvalidArgumentException when argument null or empty
  */
 public class Name 
 {
@@ -17,7 +20,7 @@ public class Name
 		setLastName(lastName);
 	}
 
-	public String getFirstName() 
+	public String getFirstName() throws IOException
 	{	
 		return firstName;
 	}

@@ -12,17 +12,9 @@ public class Main
 	{
 		System.out.println("Class 10 Lab 01 Start ...");
 		
-		try 
-		{
-			Bookstore bs = new Bookstore();
-			System.out.println();
-			System.out.println("DISPLAY BOOKS");
-			bs.displayBooks();
-		} 
-		catch (InvalidBookDateException | InvalidArgumentException e) 
-		{
-			e.getMessage();
-			e.printStackTrace();
-		}		
+		Bookstore bs = new Bookstore();
+		System.out.println();
+		System.out.println("DISPLAY BOOKS");
+		bs.displayBooks();
 	}
 }
